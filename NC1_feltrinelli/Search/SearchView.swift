@@ -10,49 +10,56 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @State private var searchText = ""
+    @State private var searchText: String = ""
     var CategoryView = DataSearch()
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
+    @State private var isSearching: Bool = false
     
     var body: some View {
         NavigationView{
-            ScrollView {
-            VStack {
-                SearchBar(text: searchText)
-            }
-
-                LazyVGrid(columns: columns, spacing: 10){
+            ScrollView{
+                VStack {
+                    SearchBar(text: $searchText, isSearching: $isSearching)
                     
-                    
-                    ForEach(CategoryView.categories){ catego in
+                    if isSearching{
+                        NavigationLink(destination: ContentView()){
+                            EmptyView()
+                        }
+                        .hidden()
+                    }
+                }
+                    LazyVGrid(columns: columns, spacing: 10){
                         
-                        ZStack {
+                        
+                        ForEach(CategoryView.categories){ catego in
                             
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(catego.colorBg)
-                                .aspectRatio(contentMode: .fit)
-                                .clipped()
-                            
-                            
-                            Image(catego.imageName)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .clipped()
-                                .frame(width: 150 ,height: -10)
-                           
-                            VStack(alignment: .leading)
-                            {
-                                Text(catego.nameCategory)
-                                    .font(.headline)
-                                    .padding()
+                            ZStack {
+                                
+                                RoundedRectangle(cornerRadius: 10)
+                                    .foregroundColor(catego.colorBg)
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipped()
+                                
+                                
+                                Image(catego.imageName)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipped()
+                                    .frame(width: 100)
+                                
+                                VStack(alignment: .leading)
+                                {
+                                    Text(catego.nameCategory)
+                                        .font(.headline)
+                                        .padding()
+                                }
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                                
                             }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                             
                         }
-    
-                    }
-                }.padding()
-            }
+                    }.padding()
+                }
             
             
         }

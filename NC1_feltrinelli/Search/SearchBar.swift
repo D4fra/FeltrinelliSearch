@@ -9,7 +9,9 @@ import SwiftUI
 
 struct SearchBar: View {
     
-    @State var text: String
+    @Binding var text: String
+    @Binding var isSearching: Bool
+    
     
     var body: some View {
         HStack{
@@ -26,7 +28,23 @@ struct SearchBar: View {
                             .padding(.leading, 8)
                             .padding(.trailing, 4)
                     }
-            )
+                )
         }
+        //Questa funzione funziona che quando clicchi, per esempio la searchbar, il valore in questo cado isSearching, avrà il valore di true
+        /*.onTapGesture {
+            isSearching = true
+        }
+        */
+        
     }
 }
+
+/* if isSearching
+ {
+     Button(action: { isSearching = false; text = ""; UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)},
+            label: {
+         Text("Annulla")
+     })
+  */
+
+// Questo if serve per chiudere la tastiera nel caso l'utente non volesse piu fare le ricerche
