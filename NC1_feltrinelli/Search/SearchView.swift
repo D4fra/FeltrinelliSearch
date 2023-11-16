@@ -14,18 +14,19 @@ struct SearchView: View {
     var CategoryView = DataSearch()
     let columns = [GridItem(.flexible()), GridItem(.flexible())]
     @State private var isSearching: Bool = false
+    @State private var isModal:  Bool = false
     
     var body: some View {
         NavigationView{
             ScrollView{
                 VStack {
-                    SearchBar(text: $searchText, isSearching: $isSearching)
-                    
-                    if isSearching{
-                        NavigationLink(destination: ContentView()){
-                            EmptyView()
-                        }
-                        .hidden()
+                    Button(action: {
+                        isModal.toggle()
+                    }) {
+                       SearchBar(text: $searchText, isSearching: $isSearching)
+                    }
+                    .fullScreenCover(isPresented: $isModal) {
+                        ContentView()
                     }
                 }
                     LazyVGrid(columns: columns, spacing: 10){
@@ -45,7 +46,7 @@ struct SearchView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
                                     .clipped()
-                                    .frame(width: 100)
+                                    .frame(width: 50, height:  10)
                                 
                                 VStack(alignment: .leading)
                                 {

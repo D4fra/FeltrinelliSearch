@@ -17,6 +17,9 @@ struct ContentView: View {
         NavigationView{
             ScrollView{
                 VStack{
+                    Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+                        SearchView()
+                    }
                     SearchBar(text: $searchText, isSearching: $isSearching)
                 }
                 Divider()
