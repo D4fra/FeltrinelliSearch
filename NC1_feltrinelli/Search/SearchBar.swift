@@ -29,6 +29,15 @@ struct SearchBar: View {
                             .padding(.trailing, 4)
                     }
                 )
+                .overlay(
+                    HStack{
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundColor(.black)
+                            .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
+                            .padding(.trailing, 8)
+                            .padding(.leading, 4)
+                    }
+            )
         }
         //Questa funzione funziona che quando clicchi, per esempio la searchbar, il valore in questo cado isSearching, avrà il valore di true
         /*.onTapGesture {

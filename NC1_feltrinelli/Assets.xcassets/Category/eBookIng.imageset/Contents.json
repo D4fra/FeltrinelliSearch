@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "image 7.png",
+      "filename" : "image 20.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -11,18 +11,6 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

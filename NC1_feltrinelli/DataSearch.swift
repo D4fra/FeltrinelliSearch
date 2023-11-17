@@ -20,7 +20,7 @@ class DataSearch {
         category(nameCategory: "Libri", imageName: "LibriImg", colorBg: .colorLibri),
         category(nameCategory: "Libri in inglese", imageName: "LibriIng", colorBg: .colorLibriIng),
         category(nameCategory: "eBook", imageName: "eBook", colorBg: .coloreBook),
-        category(nameCategory: "eBook in lingua inglese", imageName: "", colorBg: .coloreBookIng),
+        category(nameCategory: "eBook in lingua straniera", imageName: "eBookIng", colorBg: .coloreBookIng),
         category(nameCategory: "Film", imageName: "Film", colorBg: .colorFilm),
         category(nameCategory: "CD musicali", imageName: "CD", colorBg: .colorCD),
         category(nameCategory: "Vinili", imageName: "Vinili", colorBg: .colorVinili),
