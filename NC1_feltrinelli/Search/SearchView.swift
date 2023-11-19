@@ -22,6 +22,9 @@ struct SearchView: View {
         NavigationView{
             ScrollView{
             VStack {
+                Spacer()
+                Spacer()
+                Spacer()
                 Button(action: {
                     isModal.toggle()
                 }) {
@@ -61,8 +64,6 @@ struct SearchView: View {
             Divider()
                 .frame(height: 4)
                 .background(Color.colortabar)
-            
-            
             
             
                 LazyVGrid(columns: columns, spacing: 10){
@@ -105,8 +106,11 @@ struct SearchView: View {
                         
                     }
                 }.padding()
+            
             }
+        
         }
+   
     }
 }
 

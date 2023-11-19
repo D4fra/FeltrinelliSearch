@@ -11,6 +11,7 @@ struct SearchBar: View {
     
     @Binding var text: String
     @Binding var isSearching: Bool
+    @Environment (\.colorScheme) var colorSchemer
     
     
     var body: some View {
@@ -32,7 +33,7 @@ struct SearchBar: View {
                 .overlay(
                     HStack{
                         Image(systemName: "line.3.horizontal")
-                            .foregroundColor(.black)
+                            .foregroundColor(colorSchemer == .dark ? Color.white: Color.black)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                             .padding(.trailing, 8)
                             .padding(.leading, 4)
