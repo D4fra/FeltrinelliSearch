@@ -14,7 +14,10 @@ struct ContentView: View {
     @State private var isSearching: Bool = false
     var ListView = DataList()
     // fornisce un modo di accedere alla modalità di presentazione dell'ambiente, consentendo di controllare o manipolare il flusso di navigazione o la presentazione delle viste in SwiftUI.
-    @Environment(\.presentationMode) var presentationmode
+    @Environment (\.presentationMode) var presentationmode
+    // @Enviroment dichiariamo una variabili che si addatta alle impostazioni del tema del sistema
+    @Environment (\.colorScheme) var colorSchemer
+    
     
     var body: some View {
         NavigationView{
@@ -33,7 +36,8 @@ struct ContentView: View {
                             .frame(maxWidth: .zero, alignment: .leading)
                             .padding(.bottom)
                             .padding(.leading,8)
-                            .foregroundColor(.black)
+                            //con questa linea di comando ho utilzzato un operatore ternario. in qeusta riga ha la funzione di cambiare il colore al seconda del tema(scuro o chiaro). Infatti esso funzione come "Condizione ? ValoreVero: ValoreFalso"
+                            .foregroundColor(colorSchemer == .dark ? Color.white: Color.black)
                             .font(.title)
                         }
                         Text("Cerca")
@@ -43,38 +47,55 @@ struct ContentView: View {
                             .font(.title2)
                         
                     }
-                    // Qui c'è la barra di ricerca. Con le due variabili di STATO $searchText e $isSearching che prendono il valore delle varialbilli BIDIREZIONALI text e isSearching quando vengono modificate
+                    // Qui c'è la barra di ricerca. Con le due variabili di STATO $searchText e $isSearching che prendono il valore delle varialbilli BIDIREZIONALI text e isSearching anche quando vengono modificate
                     SearchBar(text: $searchText, isSearching: $isSearching)
                 }
                 // Con Divider creo una linea 
                 Divider()
                     .frame(height: 4)
                     .background(Color.colortabar)
+                    
+                
                 VStack(alignment: .leading){
+                    
                     ForEach(ListView.lists){ lis in
+                        
                         HStack{
-            
-                                Text(lis.type)
-                                    .font(.footnote)
-                                    .frame(alignment: .topLeading)
                             
-                            Text(lis.nameLibro)
-                                .font(.headline)
-                                .frame(maxWidth: .infinity, maxHeight: .zero, alignment: .leading)
+                            VStack(alignment: .leading)
+                            {
+                                Text(lis.type)
+                                    .font(.caption2)
+                                    .frame(alignment: .leading)
+                                    .padding(.bottom, 4)
+                                    .accessibilityLabel("Ciao")
+                                    
+                            
+                                Text(lis.nameLibro)
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                            }
+                            
+                            Spacer() //In modo tale da creare spazio tra l'immagine e il testo
                             
                             Image(lis.imageLibro)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, alignment: .trailing)
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+                                
                                 .padding(.trailing)
                             
                         }
+                        
                         Divider()
+                            
                     }
+                    
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
+                
                 
             }
         }
