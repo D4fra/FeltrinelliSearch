@@ -35,7 +35,7 @@ struct ContentView: View {
                     
                     // Questo è il simbolo che permette di chiudere il moodale
                     Image(systemName: "multiply")
-                        .frame(width: 0, alignment: .leading)
+                        .frame(minWidth: .zero, alignment: .leading)
                         .padding(.bottom)
                         .padding(.trailing)
                     //con questa linea di comando ho utilzzato un operatore ternario. in qeusta riga ha la funzione di cambiare il colore al seconda del tema(scuro o chiaro). Infatti esso funzione come "Condizione ? ValoreVero: ValoreFalso"
@@ -43,6 +43,8 @@ struct ContentView: View {
                         .font(.title)
                         .accessibilityLabel("Tasto per tornare indietro")
                 }
+                    Spacer()
+                        .frame(width: 340)
                     /*
                      Text("Cerca")
                      .frame(maxWidth: .infinity, alignment: .trailing)

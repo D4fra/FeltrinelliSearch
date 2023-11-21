@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct SearchView: View {
     
     @State private var searchText: String = ""
@@ -36,7 +37,7 @@ struct SearchView: View {
                             .padding(.leading, -6)
                             .padding(.trailing, 4)
                             .frame(minWidth: .zero,  alignment: .center)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color.colorSearch)
                         
                         Spacer()
                         
