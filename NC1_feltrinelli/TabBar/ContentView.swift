@@ -23,86 +23,86 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             
-                VStack{
+            VStack{
+                HStack{
+                    
+                    // Con questo bottone ritorno alla view precendete
+                    Button{
+                        // Viene utilizzato per chiudere un foglio in modale
+                        presentationmode.wrappedValue.dismiss()
+                    }
+                label:{
+                    
+                    // Questo è il simbolo che permette di chiudere il moodale
+                    Image(systemName: "multiply")
+                        .frame(width: 0, alignment: .leading)
+                        .padding(.bottom)
+                        .padding(.trailing)
+                    //con questa linea di comando ho utilzzato un operatore ternario. in qeusta riga ha la funzione di cambiare il colore al seconda del tema(scuro o chiaro). Infatti esso funzione come "Condizione ? ValoreVero: ValoreFalso"
+                        .foregroundColor(colorSchemer == .dark ? Color.white: Color.black)
+                        .font(.title)
+                        .accessibilityLabel("Tasto per tornare indietro")
+                }
+                    /*
+                     Text("Cerca")
+                     .frame(maxWidth: .infinity, alignment: .trailing)
+                     .padding(.bottom)
+                     .padding(.trailing, 160)
+                     .font(.title)
+                     */
+                }
+                // Qui c'è la barra di ricerca. Con le due variabili di STATO $searchText e $isSearching che prendono il valore delle varialbilli BIDIREZIONALI text e isSearching anche quando vengono modificate
+                SearchBar(text: $searchText, isSearching: $isSearching)
+            }
+            // Con Divider creo una linea 
+            Divider()
+                .frame(width: 365, height: 4)
+                .background(Color.colortabar)
+            
+            
+            
+            ScrollView{
+                
+                ForEach(ListView.lists){ lis in
+                    
                     HStack{
                         
-                        // Con questo bottone ritorno alla view precendete
-                        Button{
-                            // Viene utilizzato per chiudere un foglio in modale
-                            presentationmode.wrappedValue.dismiss()
+                        VStack(alignment: .leading)
+                        {
+                            Text(lis.type)
+                                .font(.caption2)
+                                .frame(alignment: .leading)
+                                .padding(.bottom, 4)
+                                .accessibilityLabel(lis.type)
+                            
+                            
+                            Text(lis.nameLibro)
+                                .font(.headline)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
                         }
-                    label:{
                         
-                        // Questo è il simbolo che permette di chiudere il moodale
-                        Image(systemName: "multiply")
-                            .frame(alignment: .leading)
-                            .padding(.bottom)
-                            .padding(.trailing, 350)
-                            //con questa linea di comando ho utilzzato un operatore ternario. in qeusta riga ha la funzione di cambiare il colore al seconda del tema(scuro o chiaro). Infatti esso funzione come "Condizione ? ValoreVero: ValoreFalso"
-                            .foregroundColor(colorSchemer == .dark ? Color.white: Color.black)
-                            .font(.title)
-                            .accessibilityLabel("Tasto per tornare indietro")
-                        }
-                        /*
-                        Text("Cerca")
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .padding(.bottom)
-                            .padding(.trailing, 160)
-                            .font(.title)
-                        */
-                    }
-                    // Qui c'è la barra di ricerca. Con le due variabili di STATO $searchText e $isSearching che prendono il valore delle varialbilli BIDIREZIONALI text e isSearching anche quando vengono modificate
-                    SearchBar(text: $searchText, isSearching: $isSearching)
-                }
-                // Con Divider creo una linea 
-                Divider()
-                    .frame(width: 365, height: 4)
-                    .background(Color.colortabar)
-                    
-                
-               
-                    ScrollView{
-                    
-                    ForEach(ListView.lists){ lis in
+                        Spacer() //In modo tale da creare spazio tra l'immagine e il testo
                         
-                        HStack{
-                            
-                            VStack(alignment: .leading)
-                            {
-                                Text(lis.type)
-                                    .font(.caption2)
-                                    .frame(alignment: .leading)
-                                    .padding(.bottom, 4)
-                                    .accessibilityLabel(lis.type)
-                                    
-                            
-                                Text(lis.nameLibro)
-                                    .font(.headline)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                
-                            }
-                            
-                            Spacer() //In modo tale da creare spazio tra l'immagine e il testo
-                            
-                            Image(lis.imageLibro)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, alignment: .trailing)
-                                .padding(.trailing)
-                                .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                            
-                        }
-                        Divider()
-                            .frame(width: 365)
-                            
+                        Image(lis.imageLibro)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, alignment: .trailing)
+                            .padding(.trailing)
+                            .accessibilityHidden(true)
+                        
                     }
-        
+                    Divider()
+                        .frame(width: 365)
+                    
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading)
-                
                 
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.leading)
+            
+            
+        }
     }
 }
 #Preview {
