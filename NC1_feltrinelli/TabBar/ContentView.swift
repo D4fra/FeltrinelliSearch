@@ -19,9 +19,10 @@ struct ContentView: View {
     @Environment (\.colorScheme) var colorSchemer
     
     
+    
     var body: some View {
-        NavigationView{
-            ScrollView{
+        NavigationStack{
+            
                 VStack{
                     HStack{
                         
@@ -31,32 +32,36 @@ struct ContentView: View {
                             presentationmode.wrappedValue.dismiss()
                         }
                     label:{
+                        
                         // Questo è il simbolo che permette di chiudere il moodale
                         Image(systemName: "multiply")
-                            .frame(maxWidth: .zero, alignment: .leading)
+                            .frame(alignment: .leading)
                             .padding(.bottom)
-                            .padding(.leading,8)
+                            .padding(.trailing, 350)
                             //con questa linea di comando ho utilzzato un operatore ternario. in qeusta riga ha la funzione di cambiare il colore al seconda del tema(scuro o chiaro). Infatti esso funzione come "Condizione ? ValoreVero: ValoreFalso"
                             .foregroundColor(colorSchemer == .dark ? Color.white: Color.black)
                             .font(.title)
+                            .accessibilityLabel("Tasto per tornare indietro")
                         }
+                        /*
                         Text("Cerca")
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .padding(.bottom)
-                            .padding(.trailing, 169)
-                            .font(.title2)
-                        
+                            .padding(.trailing, 160)
+                            .font(.title)
+                        */
                     }
                     // Qui c'è la barra di ricerca. Con le due variabili di STATO $searchText e $isSearching che prendono il valore delle varialbilli BIDIREZIONALI text e isSearching anche quando vengono modificate
                     SearchBar(text: $searchText, isSearching: $isSearching)
                 }
                 // Con Divider creo una linea 
                 Divider()
-                    .frame(height: 4)
+                    .frame(width: 365, height: 4)
                     .background(Color.colortabar)
                     
                 
-                VStack(alignment: .leading){
+               
+                    ScrollView{
                     
                     ForEach(ListView.lists){ lis in
                         
@@ -68,7 +73,7 @@ struct ContentView: View {
                                     .font(.caption2)
                                     .frame(alignment: .leading)
                                     .padding(.bottom, 4)
-                                    .accessibilityLabel("Ciao")
+                                    .accessibilityLabel(lis.type)
                                     
                             
                                 Text(lis.nameLibro)
@@ -83,22 +88,21 @@ struct ContentView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 100, alignment: .trailing)
-                                
                                 .padding(.trailing)
+                                .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                             
                         }
-                        
                         Divider()
+                            .frame(width: 365)
                             
                     }
-                    
+        
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading)
                 
                 
             }
-        }
     }
 }
 #Preview {

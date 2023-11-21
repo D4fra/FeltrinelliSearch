@@ -32,7 +32,7 @@
 		7A8CCFA32B0531070092BF29 /* DataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataList.swift; sourceTree = "<group>"; };
 		7AAC8AE12B03812700D0A621 /* NC1_feltrinelli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1_feltrinelli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAC8AE42B03812700D0A621 /* NC1_feltrinelliApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_feltrinelliApp.swift; sourceTree = "<group>"; };
-		7AAC8AE62B03812700D0A621 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7AAC8AE62B03812700D0A621 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		7AAC8AE82B03812800D0A621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AAC8AEB2B03812800D0A621 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */

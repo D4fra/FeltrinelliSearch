@@ -8,31 +8,45 @@
 import SwiftUI
 @main
 struct NC1_Feltrinelli: App {
+   
+    @State private var index = 0
     
 var body: some Scene {
          
         WindowGroup{
-            TabView{
+            
+            TabView(selection: $index)
+                   {
                 HomeView()
-                    .tabItem { Image(systemName: "house"); Text("Home")
-                        
+                           .tabItem { Image(systemName: "house").accessibilityLabel("Home") ;
+                        Text(index == 0 ? "Home": "")
                     }
+                       // con i tag assegno un valore fisso ad ogni scheda, quindi quando si cambierà scheda il valore dell'index cambierà con il valore del tag
+                    .tag(0)
                 
                 SearchView()
-                    .tabItem { Image(systemName: "magnifyingglass"); Text("Cerca")
+                    .tabItem { Image(systemName: "magnifyingglass") .accessibilityLabel("Cerca");
+                        Text(index == 1 ? "Cerca": "")
                     }
+                    .tag(1)
                 
                 CartView()
-                    .tabItem { Image(systemName: "cart"); Text("Carello")
+                    .tabItem { Image(systemName: "cart") .accessibilityLabel("Carello");
+                        Text(index == 2 ? "Carello": "")
                     }
+                    .tag(2)
                 
                 NegoziView()
-                    .tabItem { Image(systemName: "mappin"); Text("Negozi")
+                    .tabItem { Image(systemName: "mappin") .accessibilityLabel("Negozi");
+                        Text(index == 3 ? "Negozi": "")
                     }
+                    .tag(3)
                 
                 ProfiloView()
-                    .tabItem { Image(systemName: "person"); Text("Profilo")
+                    .tabItem { Image(systemName: "person") .accessibilityLabel("Profilo");
+                        Text(index == 4 ? "Profilo": "")
                     }
+                    .tag(4)
 
             }
             .accentColor(.colortabar)

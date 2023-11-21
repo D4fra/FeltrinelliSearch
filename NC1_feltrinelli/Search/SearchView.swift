@@ -19,12 +19,9 @@ struct SearchView: View {
     @Environment (\.colorScheme) var colorSchemer
     
     var body: some View {
-        NavigationView{
-            ScrollView{
-            VStack {
-                Spacer()
-                Spacer()
-                Spacer()
+        NavigationStack{
+            
+            VStack{
                 Button(action: {
                     isModal.toggle()
                 }) {
@@ -54,63 +51,71 @@ struct SearchView: View {
                     .padding(.trailing, 8)
                     .padding(.vertical, 8)
                     .cornerRadius(8)
+                    .frame(alignment: .top)
                     
                 }
                 .fullScreenCover(isPresented: $isModal) {
                     ContentView()
                 }
+                Divider()
+                    .frame(width: 365, height: 4)
+                    .background(Color.colortabar)
+            }
+            
+            VStack{
                 
-            }
-            Divider()
-                .frame(height: 4)
-                .background(Color.colortabar)
-            
-            
-                LazyVGrid(columns: columns, spacing: 10){
+                ScrollView{
                     
-                    
-                    ForEach(CategoryView.categories){ catego in
-                        
-                        ZStack {
-                            
-                            Rectangle()
-                                .foregroundColor(catego.colorBg)
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 130)
-                                .cornerRadius(10)
-                                .clipped()
-                            // Con l'overlay posso unire piu viste o anche dei contenuti aggiuntivi o modifiche in modo tale da farle sovvrapporle
-                                .overlay(
-                                    Image(catego.imageName)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 100, height:  70)
+                    ZStack{
+                        VStack{
+                            ScrollView{
+                                LazyVGrid(columns: columns, spacing: 10){
                                     
-                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-                                        .padding(.top)
-                                )
-                                .clipped()
-                                .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/) // con questa funzione nascondo gli elemnti al voiceOver in modo tale che non li legga
-                            
-                            VStack(alignment: .leading)
-                            {
-                                Text(catego.nameCategory)
-                                    .font(.headline)
-                                    .padding()
-                                    .foregroundColor(.white)
-                                    .accessibilityLabel(catego.nameCategory) // Fornisce un etichetta al testo, che in questo caso è il nameCategory
+                                    
+                                    ForEach(CategoryView.categories){ catego in
+                                        
+                                        ZStack {
+                                            
+                                            Rectangle()
+                                                .foregroundColor(catego.colorBg)
+                                                .aspectRatio(contentMode: .fill)
+                                                .frame(height: 130)
+                                                .cornerRadius(10)
+                                                .clipped()
+                                            // Con l'overlay posso unire piu viste o anche dei contenuti aggiuntivi o modifiche in modo tale da farle sovvrapporle
+                                                .overlay(
+                                                    Image(catego.imageName)
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fill)
+                                                        .frame(width: 100, height:  70)
+                                                    
+                                                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+                                                        .padding(.top)
+                                                )
+                                                .clipped()
+                                                .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/) // con questa funzione nascondo gli elemnti al voiceOver in modo tale che non li legga
+                                            
+                                            VStack(alignment: .leading)
+                                            {
+                                                Text(catego.nameCategory)
+                                                    .font(.headline)
+                                                    .padding()
+                                                    .foregroundColor(.white)
+                                                    .accessibilityLabel(catego.nameCategory) // Fornisce un etichetta al testo, che in questo caso è il nameCategory
+                                            }
+                                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                                            
+                                        }
+                                        
+                                    }
+                                }.padding()
+                                
                             }
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                            
                         }
-                        
                     }
-                }.padding()
-            
+                }
             }
-        
         }
-   
     }
 }
 

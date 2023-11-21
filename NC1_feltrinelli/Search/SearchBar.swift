@@ -35,26 +35,28 @@ struct SearchBar: View {
                         Image(systemName: "line.3.horizontal")
                             .foregroundColor(colorSchemer == .dark ? Color.white: Color.black)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-                            .padding(.trailing, 8)
+                            .padding(.trailing, 15)
                             .padding(.leading, 4)
                     }
             )
         }
-        //Questa funzione funziona che quando clicchi, per esempio la searchbar, il valore in questo cado isSearching, avrà il valore di true
-        /*.onTapGesture {
+        //Questa funzione funziona che quando clicchi, per esempio la searchbar, il valore in questo caso isSearching, avrà il valore di true
+        .onTapGesture {
             isSearching = true
         }
-        */
+        
+        // Questo if serve per chiudere la tastiera nel caso l'utente non volesse piu fare le ricerche
+         if isSearching
+        {
+             Button(action: { isSearching = false; text = ""; UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)},
+                    label: {
+                 Text("Annulla")
+             })
+             
+             
+         }
         
     }
 }
 
-/* if isSearching
- {
-     Button(action: { isSearching = false; text = ""; UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)},
-            label: {
-         Text("Annulla")
-     })
-  */
 
-// Questo if serve per chiudere la tastiera nel caso l'utente non volesse piu fare le ricerche
