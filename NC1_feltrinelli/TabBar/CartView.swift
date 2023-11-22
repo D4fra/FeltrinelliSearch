@@ -33,20 +33,24 @@ struct CartView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding()
+                        .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     Image("Carrello_2")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200,height: 200)
+                        .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 }else
                 {
                     Image("Eliplse")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .padding()
+                        .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     Image("Carrello_2")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 200,height: 200)
+                        .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 }
                     
                 

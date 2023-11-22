@@ -144,7 +144,7 @@
 			};
 			buildConfigurationList = 7AAC8ADC2B03812700D0A621 /* Build configuration list for PBXProject "Feltrinelli" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = it;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,

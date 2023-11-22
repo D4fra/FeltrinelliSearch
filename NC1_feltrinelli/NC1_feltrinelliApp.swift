@@ -25,25 +25,25 @@ var body: some Scene {
                     .tag(0)
                 
                 SearchView()
-                    .tabItem { Image(systemName: "magnifyingglass") .accessibilityLabel("Cerca");
+                    .tabItem { Image(systemName: "magnifyingglass") .accessibilityLabel("Search");
                         Text(index == 1 ? "Search": "")
                     }
                     .tag(1)
                 
                 CartView()
-                    .tabItem { Image(systemName: "cart") .accessibilityLabel("Carello");
+                    .tabItem { Image(systemName: "cart") .accessibilityLabel("Cart");
                         Text(index == 2 ? "Cart": "")
                     }
                     .tag(2)
                 
                 NegoziView()
-                    .tabItem { Image(systemName: "mappin") .accessibilityLabel("Negozi");
+                    .tabItem { Image(systemName: "mappin") .accessibilityLabel("Shops");
                         Text(index == 3 ? "Shops": "")
                     }
                     .tag(3)
                 
                 ProfiloView()
-                    .tabItem { Image(systemName: "person") .accessibilityLabel("Profilo");
+                    .tabItem { Image(systemName: "person") .accessibilityLabel("Profile");
                         Text(index == 4 ? "Profile": "")
                     }
                     .tag(4)
