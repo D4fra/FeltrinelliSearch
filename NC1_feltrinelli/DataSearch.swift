@@ -17,15 +17,15 @@ struct category: Identifiable {
 
 class DataSearch {
     var categories:[category] = [
-        category(nameCategory: "Libri", imageName: "LibriImg", colorBg: .colorLibri),
-        category(nameCategory: "Libri in inglese", imageName: "LibriIng", colorBg: .colorLibriIng),
+        category(nameCategory: "Books", imageName: "LibriImg", colorBg: .colorLibri),
+        category(nameCategory: "English books", imageName: "LibriIng", colorBg: .colorLibriIng),
         category(nameCategory: "eBook", imageName: "eBook", colorBg: .coloreBook),
-        category(nameCategory: "eBook in lingua straniera", imageName: "eBookIng", colorBg: .coloreBookIng),
+        category(nameCategory: "Foreigners eBook", imageName: "eBookIng", colorBg: .coloreBookIng),
         category(nameCategory: "Film", imageName: "Film", colorBg: .colorFilm),
-        category(nameCategory: "CD musicali", imageName: "CD", colorBg: .colorCD),
-        category(nameCategory: "Vinili", imageName: "Vinili", colorBg: .colorVinili),
-        category(nameCategory: "Giochi", imageName: "Giochi", colorBg: .colorGiochi),
-        category(nameCategory: "Cartoleria", imageName: "Carto", colorBg: .colorCarto),
-        category(nameCategory: "Idee regalo", imageName: "Regalo", colorBg: .colorRegalo),
+        category(nameCategory: "Music CDs", imageName: "CD", colorBg: .colorCD),
+        category(nameCategory: "Vinyls", imageName: "Vinili", colorBg: .colorVinili),
+        category(nameCategory: "Games", imageName: "Giochi", colorBg: .colorGiochi),
+        category(nameCategory: "Stationary Store", imageName: "Carto", colorBg: .colorCarto),
+        category(nameCategory: "Gifts ideas", imageName: "Regalo", colorBg: .colorRegalo),
         ]
 }

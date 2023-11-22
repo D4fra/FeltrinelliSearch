@@ -33,7 +33,7 @@ struct SearchView: View {
                             .padding(.leading,6)
                             .padding(.trailing,4)
                         
-                        Text("Cosa stai cercando?")
+                        Text("Search")
                             .padding(.leading, -6)
                             .padding(.trailing, 4)
                             .frame(minWidth: .zero,  alignment: .center)

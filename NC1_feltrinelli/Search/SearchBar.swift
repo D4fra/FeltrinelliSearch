@@ -16,7 +16,7 @@ struct SearchBar: View {
     
     var body: some View {
         HStack{
-            TextField("Cosa stai cercando?", text: $text)
+            TextField("Search", text: $text)
                 .padding(.leading, 34)
                 .padding(.trailing, 8)
                 .padding(.vertical, 8)
@@ -50,7 +50,7 @@ struct SearchBar: View {
         {
              Button(action: { isSearching = false; text = ""; UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)},
                     label: {
-                 Text("Annulla")
+                 Text("Cancel")
              })
              
              
