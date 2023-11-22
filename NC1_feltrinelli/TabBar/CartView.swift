@@ -14,12 +14,11 @@ struct CartView: View {
         VStack{
             HStack{
                 Text("Cart")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .bold()
+                    .font(.callout)
             }
             Spacer()
             HStack{
-                Text("The cart is empty...      Continue to search")
+                Text("Your cart is empty...    Continue to search!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .padding()
                     
