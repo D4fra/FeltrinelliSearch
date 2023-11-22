@@ -142,13 +142,14 @@
 					};
 				};
 			};
-			buildConfigurationList = 7AAC8ADC2B03812700D0A621 /* Build configuration list for PBXProject "NC1_feltrinelli" */;
+			buildConfigurationList = 7AAC8ADC2B03812700D0A621 /* Build configuration list for PBXProject "Feltrinelli" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = it;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 7AAC8AD82B03812700D0A621;
 			productRefGroup = 7AAC8AE22B03812700D0A621 /* Products */;
@@ -323,6 +324,8 @@
 				DEVELOPMENT_TEAM = 7DCJG5672R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Feltrinelli;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -352,6 +355,8 @@
 				DEVELOPMENT_TEAM = 7DCJG5672R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Feltrinelli;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -373,7 +378,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AAC8ADC2B03812700D0A621 /* Build configuration list for PBXProject "NC1_feltrinelli" */ = {
+		7AAC8ADC2B03812700D0A621 /* Build configuration list for PBXProject "Feltrinelli" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AAC8AED2B03812800D0A621 /* Debug */,

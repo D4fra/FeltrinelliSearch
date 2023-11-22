@@ -7,7 +7,7 @@
 
 import SwiftUI
 @main
-struct NC1_Feltrinelli: App {
+struct Feltrinelli: App {
    
     @State private var index = 0
     
