@@ -14,7 +14,8 @@ struct CartView: View {
         VStack{
             HStack{
                 Text("Cart")
-                    .font(.callout)
+                    .font(.title2)
+                    .bold()
             }
             Spacer()
             HStack{
