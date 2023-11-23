@@ -28,6 +28,7 @@ struct SearchBar: View {
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 8)
                             .padding(.trailing, 4)
+                            .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }
                 )
                 .overlay(
@@ -37,6 +38,7 @@ struct SearchBar: View {
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
                             .padding(.trailing, 15)
                             .padding(.leading, 4)
+                            .accessibilityHidden(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }
             )
         }
