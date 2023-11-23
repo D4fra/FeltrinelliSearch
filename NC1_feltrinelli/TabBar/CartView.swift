@@ -19,9 +19,10 @@ struct CartView: View {
             }
             Spacer()
             HStack{
-                Text("Your cart is empty...    Continue to search!")
+                Text("Your cart is empty...        Continue to search!")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .padding()
+                    .padding(.leading)
+                    .accessibilityLabel("Your cart is empty Continue to search!")
                     
             }
            Spacer()

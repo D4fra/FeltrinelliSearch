@@ -41,7 +41,7 @@ struct ContentView: View {
                     //con questa linea di comando ho utilzzato un operatore ternario. in qeusta riga ha la funzione di cambiare il colore al seconda del tema(scuro o chiaro). Infatti esso funzione come "Condizione ? ValoreVero: ValoreFalso"
                         .foregroundColor(colorSchemer == .dark ? Color.white: Color.black)
                         .font(.title)
-                        .accessibilityLabel("Bottone per tornare indietro")
+                        .accessibilityLabel("Go back")
                 }
                     Spacer()
                         .frame(width: 340)
