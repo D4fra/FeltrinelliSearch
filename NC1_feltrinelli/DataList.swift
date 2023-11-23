@@ -16,10 +16,10 @@ struct ListSearch: Identifiable{
 
 class DataList {
     var lists: [ListSearch] = [
-        ListSearch(nameLibro: "camirelli", type:"", imageLibro: ""),
-        ListSearch(nameLibro: "harry potter", type:"", imageLibro: ""),
-        ListSearch(nameLibro: "lego", type:"" ,imageLibro: ""),
-        ListSearch(nameLibro: "hidden games", type:"", imageLibro: ""),
+        ListSearch(nameLibro: "Hunger games", type: "Film", imageLibro: ""),
+        ListSearch(nameLibro: "Harry potter", type: "Film", imageLibro: ""),
+        ListSearch(nameLibro: "Lego", type: "Games" ,imageLibro: ""),
+        ListSearch(nameLibro: "Hidden games", type:"Games", imageLibro: ""),
         ListSearch(nameLibro: "L'educazione delle farfalle", type: "Books", imageLibro: "EdFarfalle" ),
         ListSearch(nameLibro: "Riusciranno i nostri eroi a ritrovare l'amico misteriosamente scomparso in Sud America", type: "Books", imageLibro: "SudAmerica"),
         ListSearch(nameLibro: "Una ragazza d'altri tempi", type: "BooKs", imageLibro: "RagazzaTempi"),
