@@ -37,7 +37,9 @@ var body: some Scene {
                     .tag(2)
                 
                 NegoziView()
-                    .tabItem { Image(systemName: "mappin") .accessibilityLabel("Shops");
+                    .tabItem { Image(systemName: "mappin")
+                            .foregroundColor(index == 3 ? .red : .white)
+                            .accessibilityLabel("Shops")
                         Text(index == 3 ? "Shops": "")
                     }
                     .tag(3)

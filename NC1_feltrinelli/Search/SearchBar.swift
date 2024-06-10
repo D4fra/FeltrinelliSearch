@@ -59,6 +59,6 @@ struct SearchBar: View {
          }
         
     }
-}
+    }
 
 

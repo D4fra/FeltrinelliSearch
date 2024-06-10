@@ -15,6 +15,7 @@
 		7A8CCFA02B03F2CD0092BF29 /* NegoziView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CCF9F2B03F2CD0092BF29 /* NegoziView.swift */; };
 		7A8CCFA22B03F2DB0092BF29 /* ProfiloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CCFA12B03F2DB0092BF29 /* ProfiloView.swift */; };
 		7A8CCFA42B0531070092BF29 /* DataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CCFA32B0531070092BF29 /* DataList.swift */; };
+		7A9C3D742C16EEC900357DE9 /* ListOfBooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C3D732C16EEC900357DE9 /* ListOfBooks.swift */; };
 		7AAC8AE52B03812700D0A621 /* NC1_feltrinelliApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC8AE42B03812700D0A621 /* NC1_feltrinelliApp.swift */; };
 		7AAC8AE72B03812700D0A621 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAC8AE62B03812700D0A621 /* ContentView.swift */; };
 		7AAC8AE92B03812800D0A621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAC8AE82B03812800D0A621 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		7A8CCF9F2B03F2CD0092BF29 /* NegoziView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegoziView.swift; sourceTree = SOURCE_ROOT; };
 		7A8CCFA12B03F2DB0092BF29 /* ProfiloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfiloView.swift; sourceTree = "<group>"; };
 		7A8CCFA32B0531070092BF29 /* DataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataList.swift; sourceTree = "<group>"; };
+		7A9C3D732C16EEC900357DE9 /* ListOfBooks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfBooks.swift; sourceTree = "<group>"; };
 		7AAC8AE12B03812700D0A621 /* NC1_feltrinelli.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NC1_feltrinelli.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAC8AE42B03812700D0A621 /* NC1_feltrinelliApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NC1_feltrinelliApp.swift; sourceTree = "<group>"; };
 		7AAC8AE62B03812700D0A621 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 1; };
@@ -72,6 +74,7 @@
 		7AAC8AD82B03812700D0A621 = {
 			isa = PBXGroup;
 			children = (
+				7A9C3D732C16EEC900357DE9 /* ListOfBooks.swift */,
 				7AAC8AE32B03812700D0A621 /* NC1_feltrinelli */,
 				7AAC8AE22B03812700D0A621 /* Products */,
 			);
@@ -182,6 +185,7 @@
 				7A8CCF952B03EE1E0092BF29 /* DataSearch.swift in Sources */,
 				7A8CCFA02B03F2CD0092BF29 /* NegoziView.swift in Sources */,
 				7A8CCF8F2B038F910092BF29 /* CartView.swift in Sources */,
+				7A9C3D742C16EEC900357DE9 /* ListOfBooks.swift in Sources */,
 				7A8CCF9C2B03F25F0092BF29 /* SearchView.swift in Sources */,
 				7A8CCFA42B0531070092BF29 /* DataList.swift in Sources */,
 				7A8CCFA22B03F2DB0092BF29 /* ProfiloView.swift in Sources */,

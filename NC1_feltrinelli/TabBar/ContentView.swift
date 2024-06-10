@@ -17,7 +17,20 @@ struct ContentView: View {
     @Environment (\.presentationMode) var presentationmode
     // @Enviroment dichiariamo una variabili che si addatta alle impostazioni del tema del sistema
     @Environment (\.colorScheme) var colorSchemer
-    
+    private var dataList = DataList()
+    // Elementi consigliati per la visualizzazione
+       private var recommendedItems: [items] {
+           return dataList.lists.filter { $0.isRecommended }
+       }
+       
+       // Elementi filtrati per la ricerca
+       private var filteredItems: [items] {
+           if searchText.isEmpty {
+               return recommendedItems
+           } else {
+               return dataList.lists.filter { $0.nameLibro.localizedCaseInsensitiveContains(searchText) }
+           }
+       }
     
     
     var body: some View {
@@ -62,7 +75,34 @@ struct ContentView: View {
                 .background(Color.colortabar)
             
             
+            List {
+                ForEach(filteredItems) { item in
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text(item.type)
+                                .font(.caption2)
+                                .frame(alignment: .leading)
+                                .padding(.bottom, 4)
+                                .accessibilityLabel(item.type)
+                            
+                            Text(item.nameLibro)
+                                .font(.headline)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        
+                        Spacer()
+                        
+                        Image(item.imageLibro)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100, alignment: .trailing)
+                            .padding(.trailing)
+                            .accessibilityHidden(true)
+                    }
+                }
+            }
             
+            /*
             ScrollView{
                 
                 ForEach(ListView.lists){ lis in
@@ -102,10 +142,11 @@ struct ContentView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading)
-            
+            */
             
         }
     }
+    
 }
 #Preview {
     ContentView()

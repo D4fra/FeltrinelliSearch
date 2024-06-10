@@ -116,8 +116,12 @@ struct SearchView: View {
                     }
                 }
             }
+            
         }
     }
+    
+
+
 }
 
 #Preview {
