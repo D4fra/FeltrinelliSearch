@@ -10,7 +10,7 @@ import SwiftUI
 
 struct category: Identifiable {
     var id: UUID = UUID()
-    var nameCategory: String
+    var nameCategory: LocalizedStringKey
     var imageName: String
     var colorBg: Color
 }

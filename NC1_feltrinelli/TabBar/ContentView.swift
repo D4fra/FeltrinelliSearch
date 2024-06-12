@@ -77,30 +77,32 @@ struct ContentView: View {
             
             List {
                 ForEach(filteredItems) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.type)
-                                .font(.caption2)
-                                .frame(alignment: .leading)
-                                .padding(.bottom, 4)
-                                .accessibilityLabel(item.type)
+                    NavigationLink(destination: ListOfBooks(item: item)){
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(item.type)
+                                    .font(.caption2)
+                                    .frame(alignment: .leading)
+                                    .padding(.bottom, 4)
+                                    .accessibilityLabel(item.type)
+                                
+                                Text(item.nameLibro)
+                                    .font(.headline)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                            }
                             
-                            Text(item.nameLibro)
-                                .font(.headline)
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Spacer()
+                            
+                            Image(item.imageLibro)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 100, alignment: .trailing)
+                                .padding(.trailing)
+                                .accessibilityHidden(true)
                         }
-                        
-                        Spacer()
-                        
-                        Image(item.imageLibro)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, alignment: .trailing)
-                            .padding(.trailing)
-                            .accessibilityHidden(true)
                     }
                 }
-            }
+            }.listStyle(.grouped)
             
             /*
             ScrollView{
